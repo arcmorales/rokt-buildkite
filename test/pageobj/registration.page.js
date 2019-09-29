@@ -55,8 +55,4 @@ export class RegistrationPage extends Page {
    get submitButton () {
     return $(`input[name="register"]`)
    }
-
-   redirect() {
-       super.open()
-   }
 }

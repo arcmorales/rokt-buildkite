@@ -2,6 +2,8 @@
   "name": "web-automation",
   "version": "1.0.0",
   "description": "web automation framework",
+  "author": "Ara Rosalia Morales",
+  "license": "MIT",
   "main": "src/index.js",
   "dependencies": {
     "chai": "^4.2.0"
@@ -22,15 +24,6 @@
     "@wdio/spec-reporter": "^5.12.1",
     "@wdio/sync": "^5.12.3"
   },
-  "keywords": [
-    "WebdriverIO",
-    "WebDriver",
-    "appium",
-    "native app",
-    "hybrid",
-    "android",
-    "ios"
-  ],
   "scripts": {
     "test": "babel-node src/index.js"
   }
