@@ -4,7 +4,7 @@ import Launcher from '@wdio/cli'
 let conf = './wdio.conf.js'
 let suite = process.argv[2] || ['default']
 
-const wdio = new Launcher(conf, { suite: suite })
+const wdio = new Launcher(conf, { suite: [suite] })
 
 wdio.run().then((code) => {
   process.exit(code)
@@ -16,3 +16,4 @@ wdio.run().then((code) => {
     process.exit(1)
   }
 })
+

@@ -22,6 +22,12 @@ exports.config = {
   ],
   suites: {
     default: [
+      './test/specs/*.spec.js'
+    ],
+    register: [
+      './test/specs/register.spec.js'
+    ],
+    login: [
       './test/specs/login.spec.js'
     ]
   },

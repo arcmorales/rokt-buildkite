@@ -3,7 +3,8 @@
 export const CONTACT_INFO = {
     FIRSTNAME:"John",
     LASTNAME: "Smith",
-    PHONE: "202-555-0121"
+    PHONE: "202-555-0121",
+    EMAIL: "test@foo.com"
 }
 
 export const MAIING_INFO = {
@@ -15,7 +16,7 @@ export const MAIING_INFO = {
 }
 
 export const USER_INFO = {
-    NAME: new Date(),
+    NAME: Date.now(),
     PASSWORD: "helloworld"
 }
 

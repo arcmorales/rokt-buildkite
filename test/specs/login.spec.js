@@ -5,6 +5,7 @@ import { LoginPage } from '../pageobj/logIn.page'
 import { FindFlightPage } from '../pageobj/findFlight.page'
 import { TIMINGS } from '../../constants/timings'
 import { VALID_USER, INCORRECT_INFO} from '../../constants/info'
+import { openUrl, waitForPageLoad } from '../../src/helper'
 
 const loginPage = new LoginPage()
 const findFlightPage = new FindFlightPage()
@@ -14,10 +15,7 @@ let signInUrl
 
 before('Redirect to sign in screen', () => {
     signInUrl = `${URL.BASE}${URL.SIGNIN}`
-    driver.url(signInUrl)
-    driver.waitUntil(() =>{
-            return driver.getUrl() === `${URL.BASE}${URL.SIGNIN}`
-    }, TIMINGS.PAGELOAD);
+    openUrl(signInUrl,TIMINGS.PAGELOAD, false)
 })
 
 describe('Sign in validation', () => {
@@ -43,9 +41,7 @@ describe('Sign in validation', () => {
 
     it('should log user in with correct credentials', () => {
         loginPage.logIn(VALID_USER.USERNAME, VALID_USER.PASSWORD)
-        driver.waitUntil(() =>{
-            return driver.getUrl() !== signInUrl
-        }, TIMINGS.PAGELOAD)
+        waitForPageLoad(signInUrl,TIMINGS.PAGELOAD, true)
         expect(loginPage.usernameField.isDisplayed()).to.equal(false)
         expect(findFlightPage.findFlightForm.isDisplayed()).to.equal(true)
     })
